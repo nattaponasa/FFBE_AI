@@ -151,7 +151,16 @@ While 1
 	ElseIf PixelGetColor($Next2ButtonX,$Next2ButtonY,$GameHD) = $Next2ButtonColor Then
 		ConsoleWrite('Next Press' & @CRLF)
 		ControlClick ($GameHD, "", "","left",1,$Next2ButtonX,$Next2ButtonY)
-
+		
+	;Use Skill
+	ElseIf PixelGetColor($PlayerViewX,$PlayerViewY,$GameHD) = $PlayerViewColor Then
+		ConsoleWrite('Use Skill' & @CRLF)
+		MouseClickDrag("", 257, 663, 322, 690)
+		Sleep(2000)
+		ControlClick ($GameHD, "", "","left",1,322, 690)
+		Sleep(1000)
+		ControlClick ($GameHD, "", "","left",1,257, 663)
+		
 	;Attack Button
 	ElseIf PixelGetColor($SwordButtonX,$SwordButtonY,$GameHD) = $SwordButtonColor Then
 		ConsoleWrite('Attack Press' & @CRLF)
@@ -182,15 +191,6 @@ While 1
 			Sleep(1000)
 			ControlClick ($GameHD, "", "","left",1,55,209)
 		EndIf
-
-	;Use Skill
-	ElseIf PixelGetColor($PlayerViewX,$PlayerViewY,$GameHD) = $PlayerViewColor Then
-		ConsoleWrite('Depart Press' & @CRLF)
-		MouseClickDrag("", 257, 663, 322, 690)
-		Sleep(2000)
-		ControlClick ($GameHD, "", "","left",1,322, 690)
-		Sleep(1000)
-		ControlClick ($GameHD, "", "","left",1,257, 663)
 
 	;Customer Support Back
 	ElseIf PixelGetColor($BackButtonX,$BackButtonY,$GameHD) = $BackButtonColor Then
